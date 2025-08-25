@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>fashion & body health</title>
+  <style>
+    body {
+      background: url("st.jpg") no-repeat center center fixed;
+    background-size: cover;
+      font-family: "Poppins", sans-serif;
+      color: #333;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+    header {
+      padding: 30px;
+    }
+    h1 {
+      color: #c48799;
+      font-size: 2.5em;
+      font-weight: bold;
+    }
+    p {
+      font-size: 1.1em;
+      margin-top: 10px;
+    }
+
+    /* white box for the whole matching game */
+    .game-area {
+      background-color: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      max-width: 900px;
+      margin: 20px auto;
+    }
+body {
+  background: url("st.jpg") no-repeat center center fixed;
+  background-size: cover;
+  font-family: "Poppins", sans-serif;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+
+  padding-top: 100px;
+}
+
+.drag-row, .drop-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+.group-name {
+  color: #c48799; /* or "pink" or #ff69b4 depending on shade */
+  font-weight: bold; /* optional, makes it pop */
+}
+
+
+.draggable, .dropzone {
+  width: 100px;
+  height: 100px;
+  border: 2px dashed #c48799;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff0f6;
+  cursor: grab;
+  font-size: 0.75em;  /* shrink text so it fits */
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff0f6;
+  padding: 15px 30px;
+  border-bottom: 2px solid #ffd6e8;
+
+  position: fixed;
+  top: 0; 
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.logo {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #c48799, #ab8591);
+  box-shadow: 0 0 12px rgba(141, 65, 88, 0.5);
+  margin-right: 10px;
+}
+
+.title {
+  font-size: 1.3em;
+  font-weight: bold;
+  color: #333;
+}
+
+.subtitle {
+  font-size: 1.1em;
+  font-weight: 600;
+  color: #c48799; /* pink to match your theme */
+}
+
+
+    .draggable:hover {
+      background: #ffd6e8;
+      transform: scale(1.05);
+    }
+
+    .dropzone {
+      background: #ffeaf5;
+    }
+
+.info-section {
+  display: none; /* hidden until match */
+  margin-top: 40px;
+  margin-bottom: 80px; /* new spacing */
+  background: white;
+  border-radius: 20px;
+  padding: 20px;
+  width: 80%;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+  text-align: left;
+  animation: fadeIn 0.6s ease;
+}
+
+
+    .info-section h2 {
+      color: #c48799;
+      margin-bottom: 10px;
+    }
+    .info-section p {
+      font-size: 1em;
+      line-height: 1.6;
+    }
+    .dropzone.correct { background: #e0ffe6; border-color: #28a745; }
+    .dropzone.wrong { background: #ffe0e0; border-color: #c48799; }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+    <div class="topbar">
+  <div class="logo"></div>
+  <span class="title">teen fashion & health</span>
+  <span class="subtitle">9C biology</span>
+</div>
+
+  <header>
+    <h1>are your favourite fashion trends messing with your body?<br>the shocking truth for teen girls!</h1>
+    <p class="group-name">group 6: chloe, ashley, yerryn, gloria
+      | all the images are from pinterest
+    </p>
+  </header>
+  
+
+  <!-- 1 white box for game -->
+  <div class="game-area">
+    <!-- drag styff -->
+    <div class="drag-row">
+      <div class="draggable" draggable="true" id="jeans"><img src="jeansns-removebg-preview.png" alt="description" width="100">
+</div>
+      <div class="draggable" draggable="true" id="synthetic"><img src="t s .png" alt="description" width="100"></div>
+      <div class="draggable" draggable="true" id="thong"><img src="th4b.png" alt="description" width="100"></div>
+      <div class="draggable" draggable="true" id="heels"><img src="hls (1).png" alt="description" width="100"></div>
+      <div class="draggable" draggable="true" id="dieting"><img src="sld.png" alt="description" width="100"></div>
+      <div class="draggable" draggable="true" id="chemicals"><img src="fst (1).png" alt="description" width="100"></div>
+      <div class="draggable" draggable="true" id="revealing"><img src="rv.png" alt="description" width="100"></div>
+    </div>
+
+    <!-- drop zone -->
+    <div class="drop-row">
+      <div class="dropzone" data-match="jeans"><img src="Untitled design.png" alt="description" width="100"></div>
+      <div class="dropzone" data-match="synthetic"><img src="t s _s.png" alt="description" width="100"></div>
+      <div class="dropzone" data-match="thong"><img src="th4b_s.png" alt="description" width="100"></div>
+      <div class="dropzone" data-match="heels"><img src="hls_s.png" alt="description" width="100"></div>
+      <div class="dropzone" data-match="dieting"><img src="sld_s.png" alt="description" width="100"></div>
+      <div class="dropzone" data-match="chemicals"><img src="fst_s.png" alt="description" width="100"></div>
+      <div class="dropzone" data-match="revealing"><img src="rv (1).png" alt="description" width="100"></div>
+    </div>
+  </div>
+
+  <div class="info-section" id="info">
+    <h2 id="info-title"></h2>
+    <p id="info-text"></p>
+  </div>
+
+  <script>
+    const draggables = document.querySelectorAll('.draggable');
+    const dropzones = document.querySelectorAll('.dropzone');
+    const infoSection = document.getElementById('info');
+    const infoTitle = document.getElementById('info-title');
+    const infoText = document.getElementById('info-text');
+
+    const infoData = {
+      jeans: {
+        title: "tight clothing & restricted blood flow",
+        text: "skinny or flared jeans and shapewear may look stylish, but they can also come with hidden health concerns. these tight garments compress the abdomen and pelvic region, which reduces blood circulation and can put unnecessary pressure on internal organs. over time, this constant pressure may worsen menstrual pain, contribute to digestive discomfort, or aggravate conditions like endometriosis. in addition, restricted blood flow can leave you feeling fatigued or sore, making the risks more serious than they first appear."
+      },
+      synthetic: {
+    title: "non-breatheable fabric",
+    text: "synthetic fabrics like polyester, nylon, or spandex are widely used in fast fashion because they’re cheap and durable, but they often create an unhealthy environment for the skin. these fabrics trap heat and moisture instead of allowing proper airflow, creating a warm and damp space where bacteria and yeast thrive. over time, this can raise the risk of skin irritation, yeast infections, and urinary tract infections. unlike natural fabrics such as cotton, synthetic materials don’t let your skin breathe, which can make everyday wear uncomfortable and even harmful."
+  },
+  thong: {
+    title: "thong underwear & infection risk",
+    text: "although thongs are a popular choice for their seamless look under clothing, they pose risks for reproductive health. because the fabric is in constant contact with both the anus and the vagina, bacteria such as e. coli can be easily transferred, which increases the chance of urinary tract infections or bacterial vaginosis. the thin fabric also tends to shift during movement, spreading bacteria more easily than fuller-coverage underwear. while wearing them occasionally may not cause major issues, frequent use can compromise vaginal health and comfort."
+  },
+  heels: {
+    title: "high heels",
+    text: "wearing high heels can change the natural alignment of your body. they tilt the pelvis forward unnaturally, placing added stress on the lower back and compressing the pelvic floor. over time, this posture imbalance can cause chronic back pain, hip discomfort, and even nerve strain. in addition, constantly walking in heels tightens the calf muscles and shortens the achilles tendon, which may cause long-term mobility issues. while heels are often tied to beauty standards and formal fashion, the strain they put on the body makes them more harmful than they appear."
+  },
+  dieting: {
+    title: "extreme dieting and body image",
+    text: "diet trends that glorify thinness often push people toward restrictive eating patterns, which can have serious effects on reproductive health. extreme dieting deprives the body of essential nutrients, leading to hormone imbalances, irregular or missed periods, and even long-term fertility concerns. beyond physical health, constantly striving for unrealistic body standards can fuel disordered eating, poor self-esteem, and emotional stress. the pressure to look a certain way in fashion culture can make these issues worse, turning what seems like 'healthy discipline' into something damaging."
+  },
+  chemicals: {
+    title: "chemical exposure from fast fashion",
+    text: "fast fashion relies on mass production and cheap materials, which often means using toxic dyes, finishing agents, and other chemicals in fabrics. many of these substances—such as formaldehyde, azo dyes, or heavy metals—can cause skin irritation, allergic reactions, and respiratory problems. more concerningly, some of them act as endocrine disruptors, interfering with hormone regulation and potentially harming reproductive health over time. because these chemicals are not always properly regulated, shoppers are often unaware of the risks they face just by wearing or washing these clothes."
+  },
+  revealing: {
+    title: "premature sexualisation & stress",
+    text: "fashion trends that push revealing or overly sexualized clothing can place a heavy psychological burden, especially on young people. feeling pressured to dress in ways that attract attention can create anxiety, body image struggles, and a sense of constant self-surveillance. over time, this stress can contribute to low self-esteem, social withdrawal, or even depression. while some may feel empowered by these trends, others may feel objectified or uncomfortable, especially when such clothing becomes normalized before someone is ready. the pressure to conform can leave lasting emotional scars."
+  }
+    };
+
+    draggables.forEach(drag => {
+      drag.addEventListener('dragstart', e => {
+        e.dataTransfer.setData('text/plain', drag.id);
+      });
+    });
+
+    dropzones.forEach(zone => {
+      zone.addEventListener('dragover', e => {
+        e.preventDefault();
+        zone.style.background = "#ffe0f0"; // highlight on hover
+      });
+      zone.addEventListener('dragleave', () => {
+        zone.style.background = "#ffeaf5"; // reset
+      });
+      zone.addEventListener('drop', e => {
+        e.preventDefault();
+        const draggedId = e.dataTransfer.getData('text/plain');
+        zone.style.background = "#ffeaf5"; // reset hover style
+        if (zone.dataset.match === draggedId) {
+          infoTitle.textContent = infoData[draggedId].title;
+          infoText.textContent = infoData[draggedId].text;
+          infoSection.style.display = "block";
+          zone.classList.add("correct");
+        } else {
+          zone.classList.add("wrong");
+          setTimeout(() => zone.classList.remove("wrong"), 1000);
+        }
+      });
+    });
+  </script>
+</body>
+</html>
+
